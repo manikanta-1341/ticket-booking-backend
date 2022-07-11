@@ -6,6 +6,6 @@ module.exports.Connect = async(req,res)=>{
         console.log("connection successful")
     }
     catch(err){
-        res.send({msg:err})
+        res.send({ msg : err })
     }
 }
