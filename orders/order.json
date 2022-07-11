@@ -1,0 +1,36 @@
+{
+  "id": "order_Jrcip0QmvOL9Zn",
+  "entity": "order",
+  "amount": 22000,
+  "amount_paid": 0,
+  "amount_due": 22000,
+  "currency": "INR",
+  "receipt": "199da830-f4d4-40eb-885d-ec3c66a0b84f",
+  "offer_id": null,
+  "status": "created",
+  "attempts": 0,
+  "notes": [],
+  "created_at": 1657447437,
+  "user_id": "62c02eec1a3d61df0b0fabde",
+  "user_ticket": {
+    "date": "Sun, 10 Jul 2022 09:45:04 GMT",
+    "movie_id": "62c98d2bbfd231bdde3ddbb3",
+    "movie_name": "pakka commerial",
+    "theater_id": "62c54ebd612e3eaac600d0ed",
+    "theater_name": "balaji iconia 4k a/c",
+    "theater_location": "ibrahimpatnam",
+    "show_time": "11:30 pm",
+    "screen": "2",
+    "seatNo": "a1,a2,",
+    "price": [
+      110,
+      110
+    ],
+    "totalPrice": 220
+  },
+  "razorpay_response": {
+    "razorpay_payment_id": "pay_Jrcj9RRiZtZgTY",
+    "razorpay_order_id": "order_Jrcip0QmvOL9Zn",
+    "razorpay_signature": "ea08c16065a872185a25d7e3727ace194f6138bcedb0f0cf652de855663eb794"
+  }
+}
