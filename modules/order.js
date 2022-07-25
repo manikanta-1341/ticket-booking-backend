@@ -2,6 +2,8 @@ const Razorpay = require('razorpay');
 const { v4: uuid4 } = require('uuid')
 const fs = require('fs')
 const path = require('path');
+const User = require('../model/user')
+const mongoose = require('mongoose')
 
 
 var instance = new Razorpay({
@@ -19,13 +21,16 @@ module.exports.CreateOrder = async (req, res) => {
       "currency": "INR",
       "receipt": uuid4(),
     })
-    fs.writeFileSync(path.join(__dirname, "../orders", `order.json`), JSON.stringify(
-      {
-        ...response,
-        user_id: req.body._id,
-        user_ticket: req.body.user_ticket[0]
-      },
-      null, 2))
+    let update_object = {
+      ...response,
+      user_id: req.body._id,
+      user_ticket: req.body.user_ticket[0]
+    }
+    await User.findOneAndUpdate(
+      { _id: mongoose.Types.ObjectId(req.body._id) },
+      { $push: { payment_details: update_object } }
+    )
+
     res.send(response)
   } catch (error) {
     console.log(error)

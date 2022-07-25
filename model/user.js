@@ -40,6 +40,10 @@ const UserSchema = schema({
     reviews:{
         type:Array,
         default:[]
+    },
+    payment_details:{
+        type:Array,
+        default:[]
     }
 })
 
